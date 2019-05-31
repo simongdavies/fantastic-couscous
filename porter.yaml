@@ -1,0 +1,24 @@
+name: hello-porter-bundle
+version: 0.1.0
+description: "Hello Porter"
+invocationImage: simongdavies/hello-porter:latest
+dockerfile: cnab/app/Dockerfile.base
+
+mixins:
+  - exec
+
+install:
+   - exec:
+      description: "Install Hello Porter"
+      command: bash
+      arguments:
+        - -c
+        - echo Goodbye from Porter
+      
+uninstall:
+  - exec:
+      description: "Uninstall Hello Porter"
+      command: bash
+      arguments:
+        - -c
+        - echo Goodbye from Porter
